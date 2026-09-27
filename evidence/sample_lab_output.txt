@@ -1,0 +1,26 @@
+EXPECTED/EXAMPLE OUTPUT — NOT A CLAIM OF A REAL EXTERNAL SCAN.
+
+[SQL Injection]
+Target: http://127.0.0.1:5000/search
+Finding: user input is concatenated into SQL.
+Status: VULNERABLE IN TRAINING LAB
+
+[Reflected XSS]
+Target: http://127.0.0.1:5000/reflect
+Finding: input is inserted into HTML without output encoding.
+Status: VULNERABLE IN TRAINING LAB
+
+[Stored XSS]
+Target: http://127.0.0.1:5000/comment
+Finding: stored comments are rendered without HTML encoding.
+Status: VULNERABLE IN TRAINING LAB
+
+[BOLA/IDOR]
+Target: http://127.0.0.1:5000/user?id=2
+Finding: object lookup lacks an authorization check.
+Status: VULNERABLE IN TRAINING LAB
+
+Remediation:
+- Parameterized SQL: secure_app.py
+- HTML output encoding: secure_app.py
+- Server-side authorization: secure_app.py
